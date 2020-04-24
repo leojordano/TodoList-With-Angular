@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='TodoApp'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--BootsTrap CND-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Angular CND-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <!--Meu Estilo-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Font Awesome CND-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <title>Todo List</title>
+</head>
+<body ng-controller='TodoAppCtrl'>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-center align-items-center">
+        <i class="fas fa-arrow-right mx-2"></i>
+        <span>Todo List</span>
+        <i class="fas fa-arrow-left mx-2"></i>
+    </div>
+    <div class="card-body">
+        <table ng-if='items.length != 0' class="table table-striped">
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Delete</th>
+            </tr>
+
+            <tr ng-repeat='item in items'>
+
+                <td>
+                    {{ item.code }}
+                </td>
+
+                <td>
+                    {{ item.name }}
+                </td>
+
+                <td>
+                    {{ item.price }}
+                </td>
+
+                <td class="col d-flex justify-content-center align-items-center">
+                    <i class="fas fa-trash" ng-click='this.dell(this.item)'></i>
+                </td>
+
+            </tr>
+        </table>
+
+        <div class="body card p-2 d-flex">
+
+            <form ng-submit='this.add()'>
+                <input class="form-control mx-1" ng-model="name" type="text" placeholder="Item">
+                <input class="form-control mx-1" ng-model="price" type="text" placeholder="Price">
+                <input class="form-control mx-1" ng-model="code" type="text" placeholder="Code">
+
+                <input type="submit" >
+                
+            </form>
+        
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <span>Made with AngularJs and BootsTrap by LeoJordano</span>
+
+        <div class="links">
+            <a href="https://github.com/leojordano/TodoList-With-Angular" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+       
+    </div>
+</div>
+    
+</body>
+
+<!--Meu Script do Angular-->
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,43 @@
+body, html {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #6c757d;
+}
+
+.body {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #313131;
+}
+
+.col {
+    width: 80px;
+}
+
+.card:first-child {
+    
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+.links a {
+    margin: 0px 10px;
+    color: #313131;
+    font-size: 20px;
+    outline: none;
+}
